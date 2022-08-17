@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Random;
@@ -43,6 +44,11 @@ public class Introduction extends ListenerAdapter {
         else if (msg.getContentRaw().equals("!rps")) {
             MessageChannel channel = event.getChannel();
             channel.sendMessage("Use the slash command /rps to play!").queue();
+        }
+        else if (msg.getContentRaw().equals("!lookatthis")) {
+            MessageChannel channel = event.getChannel();
+            File file = new File("C:\\Users\\jiang\\IdeaProjects\\java-discord-bot\\src\\main\\java\\images\\1.mov");
+            channel.sendFile(file).queue();
         }
     }
 }

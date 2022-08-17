@@ -17,6 +17,10 @@ public class Commands extends ListenerAdapter {
         if (event.getName().equals("piss")) {
             event.reply("*pisses on you* (i bet you liked that huh)").queue();
         }
+        else if (event.getName().equals("fujidie")) {
+            event.reply("FUJI BETTER WATCH OUT. :smiling_imp:\n" +
+                    "https://tenor.com/view/anime-gun-reload-getting-ready-gif-17031430").queue();
+        }
         else if (event.getName().equals("spicy")) {
             File file = new File("C:\\Users\\jiang\\IdeaProjects\\java-discord-bot\\src\\main\\java\\images\\spicy.jpg");
             event.reply("***why so spicy***").addFile(file).queue();
