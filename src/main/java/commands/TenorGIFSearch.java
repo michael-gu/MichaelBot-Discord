@@ -1,5 +1,6 @@
 package commands;
 
+import me.michaelgu.DiscordBot;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +17,7 @@ public class TenorGIFSearch {
 
     public static String searchGIF(String input) {
         String parsedInput = input.replaceAll(" ", "+");
+        DiscordBot.output.println(parsedInput);
         System.out.println(parsedInput);
 
         JSONObject url = null;

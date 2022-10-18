@@ -10,13 +10,25 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.time.Instant;
 
 //Worker: java src/main/java/me/michaelgu/DiscordBot.java
 public class DiscordBot {
     public static Instant start = Instant.now();
+    public static PrintStream output;
 
-    public static void main(String[] args) throws LoginException, InterruptedException {
+    static {
+        try {
+            output = new PrintStream(new File("out.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) throws LoginException, InterruptedException, FileNotFoundException {
         // time passes
         //JDA bot = JDABuilder.createLight(System.getenv("TOKEN"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
         JDA bot = JDABuilder.createLight("MTAwNjQ0OTg3NjQxNjA3MzgzOA.GZALHa.yl_4LGn1XwP7v2FaczDjIv3PlLdt8OIkJpBKTA", GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
@@ -24,6 +36,8 @@ public class DiscordBot {
                 .addEventListeners(new SlashCommands())
                 .addEventListeners(new TextCommands())
                 .build().awaitReady();
+
+
 
         Guild guild = bot.getGuildById("1006450720167428116");
         if (guild != null) {
