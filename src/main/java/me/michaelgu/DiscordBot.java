@@ -27,18 +27,18 @@ public class DiscordBot {
 
         Guild guild = bot.getGuildById("1006450720167428116");
         if (guild != null) {
-            guild.upsertCommand("comp", "Gives compliment!").queue();
-            guild.upsertCommand("love", "makes someone feel loved!")
+            bot.upsertCommand("comp", "Gives compliment!").queue();
+            bot.upsertCommand("love", "makes someone feel loved!")
                     .addOption(OptionType.STRING, "name", "enter a name", true)
                     .queue();
-            guild.upsertCommand("nerf", "Hits target with nerf gun!")
+            bot.upsertCommand("nerf", "Hits target with nerf gun!")
                     .addOption(OptionType.STRING, "mortal_enemy", "the name of your next target", true)
                     .queue();
-            guild.upsertCommand("gifsearch", "powered by Tenor")
+            bot.upsertCommand("gifsearch", "powered by Tenor")
                     .addOption(OptionType.STRING, "search", "gif search", true)
                     .queue();
-            guild.upsertCommand("zoomies", "goes super fast!").queue();
-            guild.upsertCommand("rps", "rock-paper-scissors game!")
+            bot.upsertCommand("zoomies", "goes super fast!").queue();
+            bot.upsertCommand("rps", "rock-paper-scissors game!")
                     .addOption(OptionType.STRING, "input", "choose rock, paper, or scissors", true)
                     .queue();
         }
