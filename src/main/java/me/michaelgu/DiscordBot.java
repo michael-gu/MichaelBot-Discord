@@ -18,7 +18,7 @@ public class DiscordBot {
     public static void main(String[] args) throws LoginException, InterruptedException {
         // time passes
         //JDA bot = JDABuilder.createLight(System.getenv("TOKEN"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
-        JDA bot = JDABuilder.createLight(System.getenv("MTAwNjQ0OTg3NjQxNjA3MzgzOA.Gtg2Y7.UGIKofOeQPDoXDVp2o_oUL1PM1F6GrJubjEth0"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
+        JDA bot = JDABuilder.createLight(System.getenv("MTAwNjQ0OTg3NjQxNjA3MzgzOA.GB1cOo.1kp4VhxiT_PCyxDbf2iJvi-lbkEJ89d5bSLE80"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
                 .setActivity(Activity.playing("around on IntelliJ"))
                 .addEventListeners(new SlashCommands())
                 .addEventListeners(new TextCommands())
