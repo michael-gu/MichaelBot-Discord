@@ -1,8 +1,7 @@
 package me.michaelgu;
 
-import commands.Commands;
-import commands.Compliment;
-import commands.Introduction;
+import commands.SlashCommands;
+import commands.TextCommands;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -18,30 +17,28 @@ public class DiscordBot {
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         // time passes
-
-
-        JDA bot = JDABuilder.createLight("MTAwNjQ0OTg3NjQxNjA3MzgzOA.GeXu-I.Sf27Bg4kkgPo8nFiMrddbx7QGV9jEE5Poevzt4", GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
-                .setActivity(Activity.playing("with your heart <3"))
-                .addEventListeners(new Introduction())
-                .addEventListeners(new Commands())
-                .addEventListeners(new Compliment())
+        JDA bot = JDABuilder.createLight(System.getenv("TOKEN"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
+                .setActivity(Activity.playing("around on IntelliJ"))
+                .addEventListeners(new SlashCommands())
+                .addEventListeners(new TextCommands())
                 .build().awaitReady();
 
-        Guild guild = bot.getGuildById("926987984765603850");
-
+        Guild guild = bot.getGuildById("1006450720167428116");
         if (guild != null) {
-            bot.upsertCommand("comp", "Gives compliment!").queue();
-            bot.upsertCommand("fujidie", "fuji allegedly dies").queue();
-            bot.upsertCommand("piss", "you don't wanna know.").queue();
-            bot.upsertCommand("spicy", "over nine thousand scovilles").queue();
-            bot.upsertCommand("lover", "uwu blushes")
-                    .addOption(OptionType.STRING, "lovername","the name of your lover", true)
+            guild.upsertCommand("comp", "Gives compliment!").queue();
+            guild.upsertCommand("love", "makes someone feel loved!")
+                    .addOption(OptionType.STRING, "name", "enter a name", true)
                     .queue();
-            bot.upsertCommand("rps", "rock-paper-scissors game!")
-                    .addOption(OptionType.STRING, "input","choose rock, paper, or scissors", true)
+            guild.upsertCommand("nerf", "Hits target with nerf gun!")
+                    .addOption(OptionType.STRING, "mortal_enemy", "the name of your next target", true)
+                    .queue();
+            guild.upsertCommand("gifsearch", "powered by Tenor")
+                    .addOption(OptionType.STRING, "search", "gif search", true)
+                    .queue();
+            guild.upsertCommand("zoomies", "goes super fast!").queue();
+            guild.upsertCommand("rps", "rock-paper-scissors game!")
+                    .addOption(OptionType.STRING, "input", "choose rock, paper, or scissors", true)
                     .queue();
         }
-
     }
-
 }
