@@ -1,1 +1,1 @@
-worker: java src/main/java/me.michaelgu/DiscordBot.java
+worker: java DiscordBot.java
