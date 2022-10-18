@@ -15,6 +15,7 @@ public class TenorGIFSearch {
     private static final String CLIENT_KEY = "michaelbot-1666045190509";
     private static final String API_KEY = "AIzaSyAURll-_3Ip-gLoe8iWnNkthzekJSYMcBs";
 
+    // CODE COURTESY OF TENOR API DOCUMENTATION
     public static String searchGIF(String input) {
         String parsedInput = input.replaceAll(" ", "+");
         DiscordBot.output.println(parsedInput);
