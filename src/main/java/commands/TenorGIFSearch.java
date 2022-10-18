@@ -11,8 +11,8 @@ import java.net.URL;
 public class TenorGIFSearch {
     //private static final String API_KEY = System.getenv("TENOR_KEY");
     //private static final String CLIENT_KEY = System.getenv("CLIENT_KEY");
-    private static final String CLIENT_KEY = System.getenv("michaelbot-1666045190509");
-    private static final String API_KEY = System.getenv("AIzaSyAURll-_3Ip-gLoe8iWnNkthzekJSYMcBs");
+    private static final String CLIENT_KEY = "michaelbot-1666045190509";
+    private static final String API_KEY = "AIzaSyAURll-_3Ip-gLoe8iWnNkthzekJSYMcBs";
 
     public static String searchGIF(String input) {
         String parsedInput = input.replaceAll(" ", "+");

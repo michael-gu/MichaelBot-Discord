@@ -12,13 +12,14 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import javax.security.auth.login.LoginException;
 import java.time.Instant;
 
+//Worker: java src/main/java/me/michaelgu/DiscordBot.java
 public class DiscordBot {
     public static Instant start = Instant.now();
 
     public static void main(String[] args) throws LoginException, InterruptedException {
         // time passes
         //JDA bot = JDABuilder.createLight(System.getenv("TOKEN"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
-        JDA bot = JDABuilder.createLight(System.getenv("MTAwNjQ0OTg3NjQxNjA3MzgzOA.GB1cOo.1kp4VhxiT_PCyxDbf2iJvi-lbkEJ89d5bSLE80"), GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
+        JDA bot = JDABuilder.createLight("MTAwNjQ0OTg3NjQxNjA3MzgzOA.GZALHa.yl_4LGn1XwP7v2FaczDjIv3PlLdt8OIkJpBKTA", GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
                 .setActivity(Activity.playing("around on IntelliJ"))
                 .addEventListeners(new SlashCommands())
                 .addEventListeners(new TextCommands())

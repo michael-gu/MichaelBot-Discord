@@ -1,1 +1,1 @@
-Worker: java src/main/java/me/michaelgu/DiscordBot.java
+worker: java -jar target/bot-1.0-jar-with-dependencies.jar
